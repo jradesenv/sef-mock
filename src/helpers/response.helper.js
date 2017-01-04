@@ -18,7 +18,7 @@ module.exports = function(builder) {
 
         function sendError(res, msg, next) {
             res.status(200).send({
-                "ResultCode": "FAIL",
+                "ResultCode": "Error",
                 "Messages": [
                     {
                         "Message": msg
