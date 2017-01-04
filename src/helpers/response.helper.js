@@ -20,7 +20,9 @@ module.exports = function(builder) {
             res.status(200).send({
                 "ResultCode": "FAIL",
                 "Messages": [
-                    msg
+                    {
+                        "Message": msg
+                    }
                 ]    
             });
             next();
