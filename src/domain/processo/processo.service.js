@@ -19,7 +19,7 @@ module.exports = function (builder) {
                     getProcessoMock(123453)
                 ]);
             } else if (numeroProcesso == 11111) {
-                return callback(null, getProcessoMock(11111));
+                return callback(null, [getProcessoMock(11111)]);
             } else {
                 return callback("Não existem processos para o numero informado.");
             }
