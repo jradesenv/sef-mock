@@ -54,7 +54,7 @@ module.exports = function (builder) {
                 "Descricao": "REST - Requerimento de Restituição de Tributo " + numero,
                 "Rede": "REST - Restituição de Tributo " + numero,
                 "Data": "2004-02-12T15:19:21",
-                "Arquivo" : "urldoarquivo" + numero
+                "Arquivo" : "http://www.ntconsult.com.br"
             };
             return documento;
         }
