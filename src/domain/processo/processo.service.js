@@ -53,7 +53,6 @@ module.exports = function (builder) {
                 "Numero": numero,
                 "Descricao": "REST - Requerimento de Restituição de Tributo " + numero,
                 "Rede": "REST - Restituição de Tributo " + numero,
-                "Status": "Análise Gerente Regional " + numero,
                 "Data": "2004-02-12T15:19:21",
                 "Arquivo" : "urldoarquivo" + numero
             };
