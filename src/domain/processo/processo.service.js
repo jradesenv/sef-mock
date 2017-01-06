@@ -12,6 +12,11 @@ module.exports = function (builder) {
             if (typeof numeroProcesso == "undefined" || numeroProcesso == "") {
                 return callback("Parametro de query numeroProcesso é obrigatorio!");
             }
+
+            if(numeroProcesso == 1600000025457) {
+                return callback(null, getProcessoMockUm());
+            }
+
             if (numeroProcesso == 12345) {
                 return callback(null, [
                     getProcessoMock(123451),
@@ -26,7 +31,7 @@ module.exports = function (builder) {
         }
 
         function getProcessoMock(numero) {
-            if(!numero) {
+            if (!numero) {
                 numero = getRandomNumber();
             }
             var processo = {
@@ -42,11 +47,32 @@ module.exports = function (builder) {
                     getProcessoDocumentoMock()
                 ]
             };
-            return processo;            
+            return processo;
+        }
+
+        function getProcessoMockUm() {
+            var processo = {
+                "Rede": "REST - Restituição de Tributo ",
+                "NumeroProcesso": 1600000025457,
+                "Cliente": "CERVEJARIA TAQUARAS LTDA ",
+                "Status": "Análise Gerente Regional ",
+                "EstadoDoProcesso": "INICIADO ",
+                "Atualizacao": "2016-12-07T16:22:34",
+                "ListaDeDocumentos": [
+                    {
+                        "Numero": 1600000025457,
+                        "Descricao": "REST - Requerimento de Restituição de Tributos",
+                        "Rede": "REST - Restituição de Tributo",
+                        "Data": "2016-11-30T08:58:05",
+                        "Arquivo": "http://www.ntconsult.com.br"
+                    }
+                ]
+            }
+            return processo;
         }
 
         function getProcessoDocumentoMock(numero) {
-            if(!numero) {
+            if (!numero) {
                 numero = getRandomNumber();
             }
             var documento = {
@@ -54,7 +80,7 @@ module.exports = function (builder) {
                 "Descricao": "REST - Requerimento de Restituição de Tributo " + numero,
                 "Rede": "REST - Restituição de Tributo " + numero,
                 "Data": "2004-02-12T15:19:21",
-                "Arquivo" : "http://www.ntconsult.com.br"
+                "Arquivo": "http://www.ntconsult.com.br"
             };
             return documento;
         }

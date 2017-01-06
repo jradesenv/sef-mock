@@ -24,6 +24,7 @@ module.exports = function (builder) {
 
         function globalConfig(callback) {
             global.__rootPath = path.resolve(__dirname.split('config')[0]);
+            global.__filesPath = path.join(__rootPath, "files");
 
             callback();
         }
