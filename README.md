@@ -1,7 +1,7 @@
 # ENDPOINTS  
 - Consulta de Processos:  
-/api/processo?numeroProcesso=11111 (retorna processo unico)  
-/api/processo?numeroProcesso=12345 (retorna lista)  
+https://sef-mock.herokuapp.com/api/processo?numeroProcesso=11111 (retorna processo unico)  
+https://sef-mock.herokuapp.com/api/processo?numeroProcesso=12345 (retorna lista)  
     
 - Consulta DI (ENTREGUES):    
 https://sef-mock.herokuapp.com/api/di?pIdentificacao=83422726640&pIdentificacao_type=cpf&pNumDI=12345 (DI Entregue)  
