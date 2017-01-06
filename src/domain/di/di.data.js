@@ -76,10 +76,8 @@ module.exports = function (builder) {
             };
 
             if(typeof arquivoType !== "undefined" && arquivoType != null) {
-                di.arquivo = {
-                    type: arquivoType,
-                    value: service.arquivoMock[arquivoType]
-                };
+                di.documento = service.arquivoMock[arquivoType];
+                di.tipoDocumento = arquivoType;
             }
 
             if(saldoDevedor) {
