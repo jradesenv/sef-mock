@@ -16,7 +16,7 @@ https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificac
 - Consulta DI (NAO LIBERADAS):  
 https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificacao_type=cnpj&pNumDI=33333 (DI Nao Liberada e Bloqueada)  
 https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificacao_type=cnpj&pNumDI=44444 (DI Nao Liberada e Mensagem)   
-https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificacao_type=cnpj&pNumDI=55555 (DI Nao Liberada e Mensagem e DARE)
+https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificacao_type=cnpj&pNumDI=55555 (DI Nao Liberada e Mensagem e DARE)  
 https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificacao_type=cnpj&pNumDI=66666 (DI Nao Liberada com Saldo Devedor)   
 https://sef-mock.herokuapp.com/api/di?pIdentificacao=67695137000189&pIdentificacao_type=cnpj&pNumDI=77777 (DI Nao Liberada com Valor Faltante)      
 
