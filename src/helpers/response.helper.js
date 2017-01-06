@@ -17,6 +17,9 @@ module.exports = function(builder) {
         }
 
         function sendError(res, msg, next) {
+            if(typeof msg !== "string") {
+                msg = JSON.stringify(msg);
+            }
             res.status(200).send({
                 "ResultCode": "Error",
                 "Messages": [
