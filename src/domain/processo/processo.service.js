@@ -17,6 +17,10 @@ module.exports = function (builder) {
                 return callback(null, getProcessoMockUm());
             }
 
+            if(numeroProcesso == 1600000025456) {
+                return callback(null, getProcessoMockDois());
+            }
+
             if (numeroProcesso == 12345) {
                 return callback(null, [
                     getProcessoMock(123451),
@@ -65,6 +69,27 @@ module.exports = function (builder) {
                         "Rede": "REST - Restituição de Tributo",
                         "Data": "2016-11-30T08:58:05",
                         "Arquivo": "http://www.ntconsult.com.br"
+                    }
+                ]
+            }
+            return processo;
+        }
+
+        function getProcessoMockDois() {
+            var processo = {
+                "Rede": "REST - Restituição de Tributo ",
+                "NumeroProcesso": 1600000025456,
+                "Cliente": "COMERCIO E TRANSPORTES MASONDA LTDA EPP-",
+                "Status": "Aguardando Entrega de Documentos",
+                "EstadoDoProcesso": "INICIADO ",
+                "Atualizacao": "2016-11-30T08:26:13",
+                "ListaDeDocumentos": [
+                    {
+                        "Numero": 1600000025456,
+                        "Descricao": "REST - Requerimento de Restituição de Tributos",
+                        "Rede": "REST - Restituição de Tributo",
+                        "Data": "2016-11-30T08:26:11",
+                        "Arquivo" : "http://www.ntconsult.com.br"
                     }
                 ]
             }

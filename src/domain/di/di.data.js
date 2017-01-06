@@ -40,8 +40,11 @@ module.exports = function (builder) {
         function getMockData() {
             var data = {};
 
-            data[getMockKey('cpf',"83422726640","123")] = getDIMockEntregueDARE('cpf',"83422726640","123");
+            data[getMockKey('cpf',"83422726640","12345")] = getDIMockEntregue('cpf',"83422726640","12345");
             data[getMockKey('cpf',"83422726640","11111")] = getDIMockEntregueGUIA('cpf',"83422726640","11111");
+            data[getMockKey('cpf',"83422726640","22222")] = getDIMockEntregueDARE('cpf',"83422726640","22222");
+
+            data[getMockKey('cnpj',"67695137000189","12345")] = getDIMockEntregueComSaldoDevedor('cnpj',"67695137000189","12345");
             
             return data;
         }
@@ -53,6 +56,11 @@ module.exports = function (builder) {
 
         function getDIMockEntregueGUIA(pIdentificacao, pIdentificacao_type, pNumDI) {
             var di = getDIMockEntregue(pIdentificacao, pIdentificacao_type, pNumDI, "DI ENTREGUE EXIBINDO GUIA", null, constantsHelper.arquivoDI.GUIA);
+            return di;         
+        }
+
+        function getDIMockEntregueComSaldoDevedor(pIdentificacao, pIdentificacao_type, pNumDI) {
+            var di = getDIMockEntregue(pIdentificacao, pIdentificacao_type, pNumDI, "DI ENTREGUE COM SALDO DEVEDOR", 235.06);
             return di;         
         }
 
