@@ -12,7 +12,7 @@ module.exports = function(builder) {
             "naoLiberada": 2
         };
 
-        helper.arquivoDI = {
+        helper.tipoDocumentoDI = {
             "DARE": 0,
             "GUIA": 1
         };
