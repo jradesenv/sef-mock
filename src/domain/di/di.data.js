@@ -48,14 +48,14 @@ module.exports = function (builder) {
 
             //liberada
             data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockLiberadaComMensagem('cnpj', "67695137000189", "11111");
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockLiberadaGUIA('cnpj', '67695137000189', '22222');
+            data[getMockKey('cnpj', "67695137000189", "22222")] = getDIMockLiberadaGUIA('cnpj', '67695137000189', '22222');
 
             //nao liberada
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockNaoLiberadaBloqueada('cnpj', '67695137000189', '33333');
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockNaoLiberadaComMensagem('cnpj', '67695137000189', '44444');
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockNaoLiberadaComMensagemEDare('cnpj', '67695137000189', '55555');
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockNaoLiberadaComSaldoDevedorEDARE('cnpj', '67695137000189', '66666');
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockNaoLiberadaValorFaltante('cnpj', '67695137000189', '77777');            
+            data[getMockKey('cnpj', "67695137000189", "33333")] = getDIMockNaoLiberadaBloqueada('cnpj', '67695137000189', '33333');
+            data[getMockKey('cnpj', "67695137000189", "44444")] = getDIMockNaoLiberadaComMensagem('cnpj', '67695137000189', '44444');
+            data[getMockKey('cnpj', "67695137000189", "55555")] = getDIMockNaoLiberadaComMensagemEDare('cnpj', '67695137000189', '55555');
+            data[getMockKey('cnpj', "67695137000189", "66666")] = getDIMockNaoLiberadaComSaldoDevedorEDARE('cnpj', '67695137000189', '66666');
+            data[getMockKey('cnpj', "67695137000189", "77777")] = getDIMockNaoLiberadaValorFaltante('cnpj', '67695137000189', '77777');            
 
             return data;
         }
