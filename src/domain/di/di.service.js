@@ -8,7 +8,7 @@ module.exports = function (builder) {
         return service;
 
         //implementation
-        function consultar(pIdentificacao, pIdentificacao_type, pNumDI, callback) {
+        function consultar(pIdentificacao_type, pIdentificacao, pNumDI, callback) {
             if (typeof pIdentificacao == "undefined" || pIdentificacao == "") {
                 return callback("Parametro de query pIdentificacao é obrigatorio!");
             }
@@ -22,7 +22,7 @@ module.exports = function (builder) {
                 return callback("Parametro de query pNumDI é obrigatorio!");
             }
 
-            diData.consultar(pIdentificacao, pIdentificacao_type, pNumDI, function (err, resultado) {
+            diData.consultar(pIdentificacao_type, pIdentificacao, pNumDI, function (err, resultado) {
                 if (err) {
                     return callback(err);
                 }

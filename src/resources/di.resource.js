@@ -11,7 +11,7 @@ module.exports = function (builder) {
         
         // implementation        
         function consultar(req, res, next) {
-            diService.consultar(req.query.pIdentificacao, req.query.pIdentificacao_type, req.query.pNumDI, function (err, lista) {
+            diService.consultar(req.query.pIdentificacao_type, req.query.pIdentificacao, req.query.pNumDI, function (err, lista) {
                 if(err) {
                     return responseHelper.sendError(res, err, next);
                 }

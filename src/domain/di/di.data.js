@@ -19,12 +19,12 @@ module.exports = function (builder) {
             }, 1000);
         }
 
-        function consultar(pIdentificacao, pIdentificacao_type, pNumDI, callback) {
+        function consultar(pIdentificacao_type, pIdentificacao, pNumDI, callback) {
             var resultado = service.data[getMockKey(pIdentificacao_type, pIdentificacao, pNumDI)];
             callback(null, resultado);
         }
 
-        function getMockKey(pIdentificacao, pIdentificacao_type, pNumDI) {
+        function getMockKey(pIdentificacao_type, pIdentificacao, pNumDI) {
             return pIdentificacao + "_" + pIdentificacao_type + "_" + pNumDI;
         }
 
@@ -60,23 +60,23 @@ module.exports = function (builder) {
             return data;
         }
 
-        function getDIMockEntregueDARE(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockEntregue(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI ENTREGUE EXIBINDO DARE", null, constantsHelper.tipoDocumentoDI.DARE);
+        function getDIMockEntregueDARE(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockEntregue(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI ENTREGUE EXIBINDO DARE", null, constantsHelper.tipoDocumentoDI.DARE);
             return di;
         }
 
-        function getDIMockEntregueGUIA(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockEntregue(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI ENTREGUE EXIBINDO GUIA", null, constantsHelper.tipoDocumentoDI.GUIA);
+        function getDIMockEntregueGUIA(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockEntregue(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI ENTREGUE EXIBINDO GUIA", null, constantsHelper.tipoDocumentoDI.GUIA);
             return di;
         }
 
-        function getDIMockEntregueComSaldoDevedor(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockEntregue(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI ENTREGUE COM SALDO DEVEDOR", 235.06);
+        function getDIMockEntregueComSaldoDevedor(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockEntregue(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI ENTREGUE COM SALDO DEVEDOR", 235.06);
             return di;
         }
 
-        function getDIMockEntregue(pIdentificacao, pIdentificacao_type, pNumDI, nome, saldoDevedor, arquivoType) {
-            var di = getDIMockBase(pIdentificacao, pIdentificacao_type, pNumDI, nome, constantsHelper.situacaoDI.entregue);
+        function getDIMockEntregue(pIdentificacao_type, pIdentificacao, pNumDI, nome, saldoDevedor, arquivoType) {
+            var di = getDIMockBase(pIdentificacao_type, pIdentificacao, pNumDI, nome, constantsHelper.situacaoDI.entregue);
 
             if (typeof arquivoType !== "undefined" && arquivoType != null) {
                 di.documento = service.arquivoMock[arquivoType];
@@ -95,21 +95,21 @@ module.exports = function (builder) {
             return di;
         }
 
-        function getDIMockLiberadaComMensagem(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI LIBERADA COM MENSAGEM");
+        function getDIMockLiberadaComMensagem(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI LIBERADA COM MENSAGEM");
             di.mensagem = "Dirija-se ao Recinto Alfandegado para a emissão do Protocolo de Liberação e retirada da mercadoria.";
 
             return di;
         }
 
-        function getDIMockLiberadaGUIA(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI LIBERADA COM GUIA", null, constantsHelper.tipoDocumentoDI.GUIA);
+        function getDIMockLiberadaGUIA(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI LIBERADA COM GUIA", null, constantsHelper.tipoDocumentoDI.GUIA);
 
             return di;
         }
 
-        function getDIMockLiberada(pIdentificacao, pIdentificacao_type, pNumDI, nome, saldoDevedor, arquivoType) {
-            var di = getDIMockBase(pIdentificacao, pIdentificacao_type, pNumDI, nome, constantsHelper.situacaoDI.liberada);
+        function getDIMockLiberada(pIdentificacao_type, pIdentificacao, pNumDI, nome, saldoDevedor, arquivoType) {
+            var di = getDIMockBase(pIdentificacao_type, pIdentificacao, pNumDI, nome, constantsHelper.situacaoDI.liberada);
 
             if (typeof arquivoType !== "undefined" && arquivoType != null) {
                 di.documento = service.arquivoMock[arquivoType];
@@ -124,8 +124,8 @@ module.exports = function (builder) {
             return di;
         }
 
-        function getDIMockNaoLiberadaValorFaltante(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockNaoLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI NAO LIBERADA COM VALOR FALTANTE");
+        function getDIMockNaoLiberadaValorFaltante(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA COM VALOR FALTANTE");
             di.mensagem = "Pagamento antecipado inexistente ou insuficiente";
             di.somaValoresDI = 10511.26;
             di.valorBaseCalculo = 11944.61;
@@ -136,8 +136,8 @@ module.exports = function (builder) {
             return di;
         }
 
-        function getDIMockNaoLiberadaBloqueada(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockNaoLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI NAO LIBERADA BLOQUEADA");
+        function getDIMockNaoLiberadaBloqueada(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA BLOQUEADA");
             di.mensagem = "DI bloqueada: Declaração do ICMS efetuada no SISCOMEX indica valor de imposto a pagar inferior ao esperado"
             di.valorDeclarado = 1482.77;
             di.valorEsperado = 1601.45;
@@ -145,26 +145,26 @@ module.exports = function (builder) {
             return di;
         }
 
-        function getDIMockNaoLiberadaComMensagemEDare(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockNaoLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI NAO LIBERADA COM DARE E MENSAGEM", null, constantsHelper.tipoDocumentoDI.DARE);
+        function getDIMockNaoLiberadaComMensagemEDare(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA COM DARE E MENSAGEM", null, constantsHelper.tipoDocumentoDI.DARE);
             di.mensagem = "DI não recebida do SISCOMEX/SRF";
             return di;
         }
 
-        function getDIMockNaoLiberadaComMensagem(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockNaoLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI NAO LIBERADA COM MENSAGEM");
+        function getDIMockNaoLiberadaComMensagem(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA COM MENSAGEM");
             di.mensagem = "DI não recebida do SISCOMEX/SRF";
             return di;
         }
 
-        function getDIMockNaoLiberadaComSaldoDevedorEDARE(pIdentificacao, pIdentificacao_type, pNumDI) {
-            var di = getDIMockNaoLiberada(pIdentificacao, pIdentificacao_type, pNumDI, "ESTA E UMA DI NAO LIBERADA COM DARE E SALDO DEVEDOR", 7294.45, constantsHelper.tipoDocumentoDI.DARE);
+        function getDIMockNaoLiberadaComSaldoDevedorEDARE(pIdentificacao_type, pIdentificacao, pNumDI) {
+            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA COM DARE E SALDO DEVEDOR", 7294.45, constantsHelper.tipoDocumentoDI.DARE);
 
             return di;
         }
 
-        function getDIMockNaoLiberada(pIdentificacao, pIdentificacao_type, pNumDI, nome, saldoDevedor, arquivoType) {
-            var di = getDIMockBase(pIdentificacao, pIdentificacao_type, pNumDI, nome, constantsHelper.situacaoDI.naoLiberada);
+        function getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, nome, saldoDevedor, arquivoType) {
+            var di = getDIMockBase(pIdentificacao_type, pIdentificacao, pNumDI, nome, constantsHelper.situacaoDI.naoLiberada);
 
             if (typeof arquivoType !== "undefined" && arquivoType != null) {
                 di.documento = service.arquivoMock[arquivoType];
@@ -179,12 +179,12 @@ module.exports = function (builder) {
             return di;
         }
 
-        function getDIMockBase(pIdentificacao, pIdentificacao_type, pNumDI, nome, situacao) {
+        function getDIMockBase(pIdentificacao_type, pIdentificacao, pNumDI, nome, situacao) {
             var di = {
                 situacao: situacao,
                 identificacao: {
-                    type: pIdentificacao_type,
-                    value: pIdentificacao
+                    Type: pIdentificacao_type,
+                    Value: pIdentificacao
                 },
                 numero: pNumDI,
                 nome: nome
