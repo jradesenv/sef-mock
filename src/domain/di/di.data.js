@@ -41,21 +41,21 @@ module.exports = function (builder) {
             var data = {};
 
             //entregue
-            data[getMockKey('cpf', "83422726640", "12345")] = getDIMockEntregue('cpf', "83422726640", "0123456789", "ESTA E UMA DI ENTREGUE");
-            data[getMockKey('cpf', "83422726640", "11111")] = getDIMockEntregueGUIA('cpf', "83422726640", "1234567890");
-            data[getMockKey('cpf', "83422726640", "22222")] = getDIMockEntregueDARE('cpf', "83422726640", "2345678901");
-            data[getMockKey('cnpj', "67695137000189", "12345")] = getDIMockEntregueComSaldoDevedor('cnpj', "67695137000189", "3456789012");
+            data[getMockKey('cpf', "83422726640", "0123456789")] = getDIMockEntregue('cpf', "83422726640", "0123456789", "ESTA E UMA DI ENTREGUE");
+            data[getMockKey('cpf', "83422726640", "1234567890")] = getDIMockEntregueGUIA('cpf', "83422726640", "1234567890");
+            data[getMockKey('cpf', "83422726640", "2345678901")] = getDIMockEntregueDARE('cpf', "83422726640", "2345678901");
+            data[getMockKey('cnpj', "67695137000189", "3456789012")] = getDIMockEntregueComSaldoDevedor('cnpj', "67695137000189", "3456789012");
 
             //liberada
-            data[getMockKey('cnpj', "67695137000189", "11111")] = getDIMockLiberadaComMensagem('cnpj', "67695137000189", "4567890123");
-            data[getMockKey('cnpj', "67695137000189", "22222")] = getDIMockLiberadaGUIA('cnpj', '67695137000189', '5678901234');
+            data[getMockKey('cnpj', "67695137000189", "4567890123")] = getDIMockLiberadaComMensagem('cnpj', "67695137000189", "4567890123");
+            data[getMockKey('cnpj', "67695137000189", "5678901234")] = getDIMockLiberadaGUIA('cnpj', '67695137000189', '5678901234');
 
             //nao liberada
-            data[getMockKey('cnpj', "67695137000189", "33333")] = getDIMockNaoLiberadaBloqueada('cnpj', '67695137000189', '6789012345');
-            data[getMockKey('cnpj', "67695137000189", "44444")] = getDIMockNaoLiberadaComMensagem('cnpj', '67695137000189', '7890123456');
-            data[getMockKey('cnpj', "67695137000189", "55555")] = getDIMockNaoLiberadaComMensagemEDare('cnpj', '67695137000189', '8901234567');
-            data[getMockKey('cnpj', "67695137000189", "66666")] = getDIMockNaoLiberadaComSaldoDevedorEDARE('cnpj', '67695137000189', '9012345678');
-            data[getMockKey('cnpj', "67695137000189", "77777")] = getDIMockNaoLiberadaValorFaltante('cnpj', '67695137000189', '0123456789');            
+            data[getMockKey('cnpj', "67695137000189", "6789012345")] = getDIMockNaoLiberadaBloqueada('cnpj', '67695137000189', '6789012345');
+            data[getMockKey('cnpj', "67695137000189", "7890123456")] = getDIMockNaoLiberadaComMensagem('cnpj', '67695137000189', '7890123456');
+            data[getMockKey('cnpj', "67695137000189", "8901234567")] = getDIMockNaoLiberadaComMensagemEDare('cnpj', '67695137000189', '8901234567');
+            data[getMockKey('cnpj', "67695137000189", "9012345678")] = getDIMockNaoLiberadaComSaldoDevedorEDARE('cnpj', '67695137000189', '9012345678');
+            data[getMockKey('cnpj', "67695137000189", "0123456789")] = getDIMockNaoLiberadaValorFaltante('cnpj', '67695137000189', '0123456789');            
 
             return data;
         }
