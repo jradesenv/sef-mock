@@ -68,7 +68,7 @@ module.exports = function (builder) {
                         "Descricao": "REST - Requerimento de Restituição de Tributos",
                         "Rede": "REST - Restituição de Tributo",
                         "Data": "2016-11-30T08:58:05",
-                        "Arquivo": "http://www.ntconsult.com.br"
+                        "Arquivo": "http://www.sef.sc.gov.br"
                     }
                 ]
             }
@@ -89,7 +89,7 @@ module.exports = function (builder) {
                         "Descricao": "REST - Requerimento de Restituição de Tributos",
                         "Rede": "REST - Restituição de Tributo",
                         "Data": "2016-11-30T08:26:11",
-                        "Arquivo" : "http://www.ntconsult.com.br"
+                        "Arquivo" : "http://www.sef.sc.gov.br"
                     }
                 ]
             }
@@ -105,7 +105,7 @@ module.exports = function (builder) {
                 "Descricao": "REST - Requerimento de Restituição de Tributo " + numero,
                 "Rede": "REST - Restituição de Tributo " + numero,
                 "Data": "2004-02-12T15:19:21",
-                "Arquivo": "http://www.ntconsult.com.br"
+                "Arquivo": "http://www.sef.sc.gov.br"
             };
             return documento;
         }
