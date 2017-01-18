@@ -125,7 +125,7 @@ module.exports = function (builder) {
         }
 
         function getDIMockNaoLiberadaValorFaltante(pIdentificacao_type, pIdentificacao, pNumDI) {
-            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA COM VALOR FALTANTE");
+            var di = getDIMockNaoLiberada(pIdentificacao_type, pIdentificacao, pNumDI, "ESTA E UMA DI NAO LIBERADA COM VALOR FALTANTE", null, constantsHelper.tipoDocumentoDI.DARE);
             di.mensagem = "Pagamento antecipado inexistente ou insuficiente";
             di.somaValoresDI = 10511.26;
             di.valorBaseCalculo = 11944.61;
